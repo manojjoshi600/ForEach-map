@@ -1,0 +1,48 @@
+foreach vs map difference
+
+				forEach()		 	 !							map()
+									 !
+1)	executes a provided function  	 ! 1) creates a new array with the results of 
+	once for each array element.  	 !	  calling a provided function on every element in 
+									 !    the calling array.
+2)  Performs given operation on each.! 2) Performs given transformation on element of the 
+									 !	  array copy of each element.
+--------------------------------------------------------------------------------------------
+
+What exactly does this mean?
+
+--> Well, the foreach( method doesn't actually return anything(undefined).It simply calls a provided
+	function on each element in your arrays. This callback is allowed to mutate the calling array.
+
+--> meanwhile, the map() method will also call a provided function on every element in the array.
+	The difference is that map() utilizes return values and actually returns a new array of the same size.
+
+---------------------------------------------------------------------------------------------
+
+code examples
+
+--> consider the below array. If we wanted to double each element in the array, we could use either map or foreach.
+
+	let arr = [1, 2, 3, 4, 5];
+	
+ForEach:
+
+--> Note that you would never return from a foreach function as the return values are simly discarded
+	
+	arr.foreach((num,index) => {
+		return arrindex] = num *2;
+		});
+		
+Result:
+
+	// arr = [2,4,6,8,10]
+	
+Map:
+	
+	let doubled=arr.map(num => {
+		return num * 2;
+		});
+		
+result:
+
+	// double = [2,4,6,8,10]
